@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         // Initialize slider min and max values
         if (healthSlider != null)
         {
+            healthSlider.minValue = 0;
             healthSlider.maxValue = maxHealth;
             healthSlider.value = currentHealth;
         }
@@ -51,16 +52,14 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("The left mouse button is being held down.");
             TakeDamage(10);
             Debug.Log(currentHealth);
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("The right mouse button is being held down.");
             Heal(10);
             Debug.Log(currentHealth);
         }
