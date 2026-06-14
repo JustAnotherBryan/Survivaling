@@ -63,6 +63,13 @@ public class PlayerHealth : MonoBehaviour
             Heal(10);
             Debug.Log(currentHealth);
         }
+
+        if (Input.GetKeyDown("space"))
+        {
+            maxHealth += 10;
+            Debug.Log(maxHealth);  
+            healthSlider.maxValue = maxHealth;
+        }
     } 
 
 }
