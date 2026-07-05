@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    // Call this method whenever the player takes damage
+    // the player takes damage
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
     }
 
+    // heal player
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -67,6 +68,13 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             maxHealth += 10;
+            Debug.Log(maxHealth);  
+            healthSlider.maxValue = maxHealth;
+        }
+
+        if (Input.GetKeyDown("m"))
+        {
+            maxHealth -= 10;
             Debug.Log(maxHealth);  
             healthSlider.maxValue = maxHealth;
         }
